@@ -1,4 +1,5 @@
 .. image:: public/images/logo.png
+   :align: center
 
 Kamenuka Coin
 =============

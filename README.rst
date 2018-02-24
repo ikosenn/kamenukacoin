@@ -1,3 +1,5 @@
+.. image:: public/images/logo.png
+
 Kamenuka Coin
 =============
 

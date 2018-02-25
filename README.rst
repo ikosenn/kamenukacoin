@@ -1,4 +1,4 @@
-.. image:: public/images/logo.png
+.. image:: assets/images/logo.png
    :width: 350px
    :align: center
 

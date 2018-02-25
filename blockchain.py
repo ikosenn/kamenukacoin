@@ -41,7 +41,7 @@ class Blockchain():
         :return: <int> the index of the Block that will hold this transaction
         """
 
-        self.current_transaction.append({
+        self.current_transactions.append({
             'sender': sender,
             'recipient': recipient,
             'amount': amount,
@@ -77,16 +77,16 @@ class Blockchain():
             proof += 1
         return proof
 
-        @staticmethod
-        def valid_proof(last_proof, proof):
-            """
-            Validates the Proof: Does hash(last_proof, proof)
-                contain 4 leading zeroes?
+    @staticmethod
+    def valid_proof(last_proof, proof):
+        """
+        Validates the Proof: Does hash(last_proof, proof)
+            contain 4 leading zeroes?
 
-            :param last_proof:  <int> Previous proof
-            :param proof: <int> Current proof
-            :return: <bool> True if correct, False if not.
-            """
-            guess = f'{last_proof}{proof}'.encode()
-            guess_hash = hashlib.sha256(guess).hexdigest()
-            return guess_hash[:4] == "0000"
+        :param last_proof:  <int> Previous proof
+        :param proof: <int> Current proof
+        :return: <bool> True if correct, False if not.
+        """
+        guess = f'{last_proof}{proof}'.encode()
+        guess_hash = hashlib.sha256(guess).hexdigest()
+        return guess_hash[:4] == "0000"
